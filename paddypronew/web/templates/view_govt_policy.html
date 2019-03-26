@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="351" border="1">
+    <tr>
+      <td width="76">policy_name</td>
+      <td width="43">subject</td>
+      <td width="66">description</td>
+      <td width="26">date</td>
+      <td width="106">&nbsp;</td>
+    </tr>
+    {% for d in data %}
+    <tr>
+      <td>{{d[1]}}</td>
+      <td>&nbsp;{{d[2]}}</td>
+      <td>{{d[3]}}</td>
+      <td>{{d[4]}}</td>
+      <td><p><a href="{{url_for('editgovtpolicy',pid=d[0])}}">Edit</a></p>
+      <p><a href="{{url_for('deletepolicy',pid=d[0])}}">Delete</a></p></td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/update">
+  <table width="295" border="1">
+    <tr>
+      <td width="166">officer_Name</td>
+      <td width="113"><label>
+        <input type="text" name="textfield" value="{{val[1]}}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><label>
+        <input type="text" name="textfield2" value="{{val[2]}}" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Phone</td>
+      <td><label>
+        <input type="text" name="textfield3" value="{{val[3]}}" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Post</td>
+      <td><label>
+        <input type="text" name="textfield4" value="{{[4]}}" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>District</td>
+      <td><label>
+        <select name="select">
+		  <option>...Select...</option>
+          <option value="Kannur" {% if val[5]=='Kannur' %}selected {% endif %}>Kannur</option>
+          <option value="Kasaragod" {% if val[5]=="Kasaragod" %}selected {% endif %}>Kasaragod</option>
+          <option value="Wayanad" {% if val[5]=="Wayanad" %}selected {% endif %}>Wayanad</option>
+          <option value="Kozhikode" {% if val[5]=="Kozhikode" %}selected {% endif %}>Kozhikode</option>
+          <option value="Malappuram" {% if val[5]=="Malappuram" %}selected {% endif %}>Malappuram</option>
+          <option value="Palakkad" {% if val[5]=="Palakkad" %}selected {% endif %}>Palakkad</option>
+          <option value="Thrissur" {% if val[5]=="Thrissur" %}selected {% endif %}>Thrissur</option>
+          <option value="Ernakulam" {% if val[5]=="Ernakulam" %}selected {% endif %}>Ernakulam</option>
+          <option value="Idukki" {% if val[5]=="Idukki" %}selected {% endif %}>Idukki</option>
+          <option value="Kottayam" {% if val[5]=="Kottayam" %}selected {% endif %}>Kottayam</option>
+          <option value="Alappuzha" {% if val[5]=="Alappuzha" %}selected {% endif %}>Alappuzha</option>
+          <option value="Pathanamthitta" {% if val[5]=="Pathanamthitta" %}selected {% endif %}>Pathanamthitta</option>
+          <option value="Kollam" {% if val[5]=="Kollam" %}selected {% endif %}>Kollam</option>
+          <option value="Thiruvananthapuram" {% if val[5]=="Thiruvananthapuram" %}selected {% endif %}>Thiruvananthapuram</option>
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Panchayath</td>
+      <td><label>
+        <select name="select2">
+          <option>...Select...</option>
+          <option value="Azhiyur" {% if val[5]=="Azhiyur" %}selected {% endif %}>Azhiyur</option>
+          <option value="Chorode" {% if val[5]=="Chorode" %}selected {% endif %}>Chorode</option>
+          <option value="Eramala" {% if val[5]=="Eramala" %}selected {% endif %}>Eramala</option>
+          <option value="Onchiyam" {% if val[5]=="Onchiyam" %}selected {% endif %}>Onchiyam</option>
+          <option value="Chekkiad" {% if val[5]=="Chekkiad" %}selected {% endif %}>Chekkiad</option>
+          <option value="Edacherry" {% if val[5]=="Edacherry" %}selected {% endif %}>Edacherry</option>
+          <option value="Puramery" {% if val[5]=="Puramery" %}selected {% endif %}>Puramery</option>
+          <option value="Thuneri" {% if val[5]=="Thuneri" %}selected {% endif %}>Thuneri</option>
+          <option value="Valayam" {% if val[5]=="Valayam" %}selected {% endif %}>Valayam</option>
+          <option value="Vanimel" {% if val[5]=="Vanimel" %}selected {% endif %}>Vanimel</option>
+          <option value="Kunnummal" {% if val[5]=="Kunnummal" %}selected {% endif %}>Kunnummal</option>
+          <option value="Nadapuram" {% if val[5]=="Nadapuram" %}selected {% endif %}>Nadapuram</option>
+          <option value="Kayakkodi" {% if val[5]=="Kayakkodi" %}selected {% endif %}>Kayakkodi</option>
+          <option value="Kavilumpara" {% if val[5]=="Kavilumpara" %}selected {% endif %}>Kavilumpara</option>
+          <option value="Kuttaidy" {% if val[5]=="Kuttaidy" %}selected {% endif %}>Kuttaidy</option>
+          <option value="Maruthomkara" {% if val[5]=="Maruthomkara" %}selected {% endif %}>Maruthomkara</option>
+          <option value="Velom" {% if val[5]=="Velom" %}selected {% endif %}>Velom</option>
+          <option value="Narippatta" {% if val[5]=="Narippatta" %}selected {% endif %}>Narippatta</option>
+          <option value=Maniyur" {% if val[5]=="Maniyur" %}selected {% endif %}">Maniyur</option>
+          <option value="Thikkodi" {% if val[5]=="Thikkodi" %}selected {% endif %}>Thikkodi</option>
+          <option value="Meppayur" {% if val[5]=="Meppayur" %}selected {% endif %}>Meppayur</option>
+          <option value="Cheruvannur" {% if val[5]=="Cheruvannur" %}selected {% endif %}>Cheruvannur</option>
+          <option value="Perambra" {% if val[5]=="Perambra" %}selected {% endif %}>Perambra</option>
+          <option value="Chakkittappara" {% if val[5]=="Chakkittappara" %}selected {% endif %}>Chakkittappara</option>
+          <option value="Balusseri" {% if val[5]=="Balusseri" %}selected {% endif %}>Balusseri</option>
+          <option value="Naduvannur" {% if val[5]=="Naduvannur" %}selected {% endif %}>Naduvannur</option>
+          <option value="Atholi" {% if val[5]=="Atholi" %}selected {% endif %}>Atholi</option>
+          <option value="Ulliyeri" {% if val[5]=="Ulliyeri" %}selected {% endif %}>Ulliyeri</option>
+          <option value="Chemancherry" {% if val[5]=="Chemancherry" %}selected {% endif %}>Chemancherry</option>
+          <option value="Kakkodi" {% if val[5]=="Kakkodi" %}selected {% endif %}>Kakkodi</option>
+          <option value="Narikkuni" {% if val[5]=="Narikkuni" %}selected {% endif %}>Narikkuni</option>
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Pincode</td>
+      <td><label>
+        <input type="text" name="textfield5" value="{{val[7]}}" />
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2"><label>
+       <div align="center"><input type="submit" name="Submit" value="Update" /></div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

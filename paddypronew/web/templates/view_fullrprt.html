@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="322" border="1">
+    <tr>
+      <td width="28">crop</td>
+      <td width="32">place</td>
+      <td width="79">noof_disease</td>
+      <td width="61">symptoms</td>
+      <td width="36">action</td>
+      <td width="46">&nbsp;</td>
+    </tr>
+    <tr>
+       {% for d in data %}
+      <td>{{d[1]}}</td>
+      <td>{{d[2]}}</td>
+      <td>{{d[3]}}</td>
+      <td>{{d[4]}}</td>
+      <td>{{d[5]}}</td>
+      <td><p><a href="{{url_for('editfullrprt',frepo_id=d[0])}}">Edit</a></p>
+      <p><a href="{{url_for('deletefullrprt',frepo_id=d[0])}}">Delete</a></p></td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+</html>
