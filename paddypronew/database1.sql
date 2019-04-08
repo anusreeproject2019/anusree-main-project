@@ -46,13 +46,14 @@ CREATE TABLE `article_add` (
   `description` varchar(50) DEFAULT NULL,
   `file` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`aid`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 /*Data for the table `article_add` */
 
 insert  into `article_add`(`aid`,`article_title`,`description`,`file`) values 
 (2,'paddy','rrrrr','krprt.sql'),
-(3,'poulo','fffff','pesti.sql');
+(3,'poulo','fffff','pesti.sql'),
+(4,'yttrr','ffgh','govt.sql');
 
 /*Table structure for table `crop_info` */
 
@@ -64,9 +65,12 @@ CREATE TABLE `crop_info` (
   `useful_for` varchar(50) DEFAULT NULL,
   `additional_info` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`crop_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 /*Data for the table `crop_info` */
+
+insert  into `crop_info`(`crop_id`,`crop_name`,`useful_for`,`additional_info`) values 
+(1,'abcdanu','asdfghh','zxcvbnm');
 
 /*Table structure for table `farmer_reg` */
 
@@ -74,7 +78,7 @@ DROP TABLE IF EXISTS `farmer_reg`;
 
 CREATE TABLE `farmer_reg` (
   `fid` int(11) NOT NULL AUTO_INCREMENT,
-  `fname` varchar(50) DEFAULT NULL,
+  `farmer_name` varchar(50) DEFAULT NULL,
   `gender` varchar(50) DEFAULT NULL,
   `house` varchar(50) DEFAULT NULL,
   `place` varchar(50) DEFAULT NULL,
@@ -93,10 +97,8 @@ CREATE TABLE `farmer_reg` (
 
 /*Data for the table `farmer_reg` */
 
-insert  into `farmer_reg`(`fid`,`fname`,`gender`,`house`,`place`,`address`,`district`,`phone`,`email`,`panchayath`,`landmark`,`crop`,`type`,`owner`,`document`) values 
-(1,'Aswathi','female','pullissery','narikkuni','abcd','kozhikode',9367898765,'achu@gmail.com','kakkodi','fghjk','paddy','fdtyui','werty','asdfghkllo'),
-(2,'Amrutha','female','manoli','beypore','xyz','kozhikode',9253678935,'anu@gmail.com','beypore','qazxswedc','paddy','mkijnbhu','oqmzja','qqweertyy'),
-(3,'Aswathi','radiobutton','ghjkl','assdf','rtyyuu','Kasaragod',9456787654,'aswa@gmail.com','Onchiyam','errty','fffff','eeeee','uyyy','serty');
+insert  into `farmer_reg`(`fid`,`farmer_name`,`gender`,`house`,`place`,`address`,`district`,`phone`,`email`,`panchayath`,`landmark`,`crop`,`type`,`owner`,`document`) values 
+(1,'Aswathi','female','ghjkl','assdf','rtyyuu','Kasaragod',9456787654,'aswa@gmail.com','Onchiyam','errty','fffff','eeeee','uyyy','serty');
 
 /*Table structure for table `feedback` */
 
@@ -124,16 +126,19 @@ insert  into `feedback`(`feedback_id`,`fid`,`farmer_name`,`place`,`panchayath`,`
 DROP TABLE IF EXISTS `fertilizer_details`;
 
 CREATE TABLE `fertilizer_details` (
-  `fid` int(11) NOT NULL AUTO_INCREMENT,
-  `fname` varchar(50) DEFAULT NULL,
+  `fertiliser_id` int(11) NOT NULL AUTO_INCREMENT,
+  `fertiliser_name` varchar(50) DEFAULT NULL,
   `useful_for` varchar(50) DEFAULT NULL,
-  `additional_info` varchar(50) DEFAULT NULL,
   `quantity` varchar(50) DEFAULT NULL,
-  `image` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`fid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `additional_info` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`fertiliser_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `fertilizer_details` */
+
+insert  into `fertilizer_details`(`fertiliser_id`,`fertiliser_name`,`useful_for`,`quantity`,`additional_info`) values 
+(1,'xxxxx','hjjj','ghhhj','ghjjj'),
+(3,'hjkl','tfvbn','xdrfgb','dfcv');
 
 /*Table structure for table `govt_policies` */
 
@@ -161,21 +166,20 @@ CREATE TABLE `krishibhavan_reg` (
   `kid` int(11) NOT NULL,
   `officer_name` varchar(50) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
-  `phone` varchar(50) DEFAULT NULL,
+  `phone` bigint(20) DEFAULT NULL,
   `post` varchar(50) DEFAULT NULL,
   `district` varchar(50) DEFAULT NULL,
   `panchayath` varchar(50) DEFAULT NULL,
-  `pincode` varchar(50) DEFAULT NULL,
+  `pincode` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`kid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `krishibhavan_reg` */
 
 insert  into `krishibhavan_reg`(`kid`,`officer_name`,`email`,`phone`,`post`,`district`,`panchayath`,`pincode`) values 
-(2,'Diljith','diljith@gmail.com','9245678987','officer','Kozhikode','Puramery','612345'),
-(3,'Hari','hari@gmail.com','9123456789','officer','Kannur','Chorode','678987'),
-(4,'Swathi','swathi@gmail.com','9456785432','officer','Palakkad','Vanimel','673567'),
-(5,'rrtt','dddd@gmail.com','7689786567','officer','Wayanad','Chorode','387654');
+(4,'Swathi','swathi@gmail.com',9456785432,'officer','Palakkad','Vanimel',673567),
+(5,'rrtt','dddd@gmail.com',7689786567,'[4]','Thrissur','Puramery',387654),
+(10,'asdff','adff@gmail.com',9678765678,'officer','Kasaragod','Chekkiad',678987);
 
 /*Table structure for table `krishibhavan_report` */
 
@@ -187,18 +191,18 @@ CREATE TABLE `krishibhavan_report` (
   `farmer_name` varchar(50) DEFAULT NULL,
   `place` varchar(50) DEFAULT NULL,
   `crop` varchar(50) DEFAULT NULL,
+  `photo` varchar(50) DEFAULT NULL,
   `disease` varchar(50) DEFAULT NULL,
   `applied_pesticide` varchar(50) DEFAULT NULL,
   `applied_fertilizer` varchar(50) DEFAULT NULL,
   `detailed_report` varchar(50) DEFAULT NULL,
-  `photo` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`report_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 /*Data for the table `krishibhavan_report` */
 
-insert  into `krishibhavan_report`(`report_id`,`fid`,`farmer_name`,`place`,`crop`,`disease`,`applied_pesticide`,`applied_fertilizer`,`detailed_report`,`photo`) values 
-(1,2,'Amrutha','beypore','paddy','black','rtyu','zxcvv','qwertyuioop','gftrfr');
+insert  into `krishibhavan_report`(`report_id`,`fid`,`farmer_name`,`place`,`crop`,`photo`,`disease`,`applied_pesticide`,`applied_fertilizer`,`detailed_report`) values 
+(1,2,'Amrutha','beypore','paddy',NULL,'black','rtyu','zxcvv','qwertyuioop');
 
 /*Table structure for table `login` */
 
@@ -210,7 +214,7 @@ CREATE TABLE `login` (
   `username` varchar(50) DEFAULT NULL,
   `password` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 /*Data for the table `login` */
 
@@ -218,10 +222,7 @@ insert  into `login`(`id`,`type`,`username`,`password`) values
 (1,'admin','admin','admin'),
 (3,'krishibhavan','hari@gmail.com','9123456789'),
 (4,'krishibhavan','swathi@gmail.com','9456785432'),
-(5,'krishibhavan','dddd@gmail.com','7689786567'),
-(7,'krishibhavan','',''),
-(8,'krishibhavan','',''),
-(9,'krishibhavan','','');
+(10,'krishibhavan','adff@gmail.com','9678765678');
 
 /*Table structure for table `notification` */
 
@@ -236,9 +237,12 @@ CREATE TABLE `notification` (
   `plant` varchar(50) DEFAULT NULL,
   `symptoms` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`nid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `notification` */
+
+insert  into `notification`(`nid`,`title`,`date`,`disease`,`place`,`plant`,`symptoms`) values 
+(2,'ytuu','2019-04-11','ghhj','rrrrr','sddfff','fgghh');
 
 /*Table structure for table `paddy_disease_photo` */
 
@@ -263,14 +267,17 @@ DROP TABLE IF EXISTS `pesticide_details`;
 
 CREATE TABLE `pesticide_details` (
   `pid` int(11) NOT NULL AUTO_INCREMENT,
-  `pname` varchar(50) DEFAULT NULL,
+  `pesticide_name` varchar(50) DEFAULT NULL,
   `usefull_for` varchar(50) DEFAULT NULL,
   `quantity` varchar(50) DEFAULT NULL,
   `additional_info` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`pid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `pesticide_details` */
+
+insert  into `pesticide_details`(`pid`,`pesticide_name`,`usefull_for`,`quantity`,`additional_info`) values 
+(1,'dilllllll','dertyg','swedf','dfrtg');
 
 /*Table structure for table `seed_info` */
 
@@ -278,15 +285,17 @@ DROP TABLE IF EXISTS `seed_info`;
 
 CREATE TABLE `seed_info` (
   `sid` int(11) NOT NULL AUTO_INCREMENT,
-  `sname` varchar(50) DEFAULT NULL,
+  `seed_name` varchar(50) DEFAULT NULL,
   `type` varchar(50) DEFAULT NULL,
-  `quantity` varchar(50) DEFAULT NULL,
   `additional_info` varchar(50) DEFAULT NULL,
   `phone` int(11) DEFAULT NULL,
   PRIMARY KEY (`sid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `seed_info` */
+
+insert  into `seed_info`(`sid`,`seed_name`,`type`,`additional_info`,`phone`) values 
+(1,'tgbnjkmi','awdfrc','dcxfvgb',2147483647);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

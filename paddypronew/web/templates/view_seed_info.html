@@ -11,20 +11,20 @@
     <tr>
       <td width="68">seed_name</td>
       <td width="62">seed_type</td>
-      <td width="59">useful_for</td>
-      <td width="47">quantity</td>
-      <td width="88">additional_info</td>
+      <td width="59">additional_info</td>
+      <td width="47">phone</td>
       <td width="68">&nbsp;</td>
     </tr>
+    {% for d in data %}
     <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td><p><a href="#">Edit</a></p>
-      <p><a href="#">Delete</a></p></td>
+      <td>{{d[1]}}</td>
+      <td>{{d[2]}}</td>
+      <td>{{d[3]}}</td>
+      <td>{{d[4]}}</td>
+      <td><p><a href="{{url_for('editseed',sid=d[0])}}">Edit</a></p>
+      <p><a href="{{url_for('deleteseed',sid=d[0])}}">Delete</a></p></td>
     </tr>
+    {% endfor %}
   </table>
 </form>
 </body>

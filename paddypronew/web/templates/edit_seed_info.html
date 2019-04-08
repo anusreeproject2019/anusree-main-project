@@ -6,37 +6,35 @@
 </head>
 
 <body>
-<form id="form1" name="form1" method="post" action="/pesticidereg">
-  <table width="381" border="1">
+<form id="form1" name="form1" method="post" action="/updateseed">
+  <table width="378" border="1">
     <tr>
-      <td width="171">Pesticide_Name</td>
-      <td width="194"><label>
-        <input type="text" name="textfield" />
+      <td width="171">Seed_name</td>
+      <td width="191"><label>
+        <input type="text" name="textfield" value="{{val[1]}}" />
       </label></td>
     </tr>
     <tr>
-      <td>useful_for</td>
+      <td>Seed_type</td>
       <td><label>
-        <input type="text" name="textfield3" />
-      </label></td>
-    </tr>
-    <tr>
-      <td>Quantity</td>
-      <td><label>
-        <input type="text" name="textfield4" />
+        <input type="text" name="textfield2" value="{{val[2]}}"/>
       </label></td>
     </tr>
     <tr>
       <td>Additional_info</td>
       <td><label>
-        <input type="text" name="textfield5" />
+        <input type="text" name="textfield5" value="{{val[3]}}"/>
+      </label></td>
+    </tr>
+     <tr>
+      <td>call</td>
+      <td><label>
+        <input type="text" name="textfield6" value="{{val[4]}}"/>
       </label></td>
     </tr>
     <tr>
       <td colspan="2"><label>
-       <div align="center"><input type="submit" name="Submit" value="Add" />
-         </label>
-       </div>
+       <div align="center"><input type="submit" name="Submit" value="update" /></div>
      </label></td>
     </tr>
   </table>

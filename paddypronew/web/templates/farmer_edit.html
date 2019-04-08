@@ -6,141 +6,142 @@
 </head>
 
 <body>
-<form id="form1" name="form1" method="post" action="/farmereg">
+<form id="form1" name="form1" method="post" action="/updatefarmer">
   <table width="323" border="1">
     <tr>
       <td width="174">Farmer_Name</td>
       <td width="133"><label>
-        <input type="text" name="textfield" />
+        <input type="text" name="textfield" value="{{val[1]}}" />
       </label></td>
     </tr>
     <tr>
       <td>Gender</td>
       <td><label>
       Male
-      <input name="Male" type="radio" value="radiobutton" />
+      <input name="radiobutton" type="radio" value="male"{% if val[2]=='male' %} checked {% endif %} />
       Female
-      <input name="Female" type="radio" value="radiobutton" />
+      <input name="radiobutton" type="radio" value="female"{% if val[2]=='female' %} checked {% endif %}/>
       </label></td>
     </tr>
     <tr>
       <td>House</td>
       <td><label>
-      <input type="text" name="textfield3" />
+      <input type="text" name="textfield3" value="{{val[3]}}" />
       </label></td>
     </tr>
     <tr>
       <td>Place_Name</td>
       <td><label>
-        <input type="text" name="textfield4" />
+        <input type="text" name="textfield4" value="{{val[4]}}" />
       </label></td>
     </tr>
     <tr>
       <td>Address</td>
       <td><label>
-        <textarea name="textarea"></textarea>
+        <textarea name="textarea">{{val[5]}}</textarea>
       </label></td>
     </tr>
     <tr>
       <td>District</td>
       <td><label>
         <select name="select">
-          <option>...Select...</option>
-          <option>Kasaragod</option>
-          <option>Wayanad</option>
-          <option>Kozhikode</option>
-          <option>Malappuram</option>
-          <option>Palakkad</option>
-          <option>Thrissur</option>
-          <option>Ernakulam</option>
-          <option>Idukki</option>
-          <option>Kottayam</option>
-          <option>Alappuzha</option>
-          <option>Pathanamthitta</option>
-          <option>Kollam</option>
-          <option>Thiruvanathapuram</option>
+         <option>...Select...</option>
+          <option value="Kannur" {% if val[6]=='Kannur' %}selected {% endif %}>Kannur</option>
+          <option value="Kasaragod" {% if val[6]=="Kasaragod" %}selected {% endif %}>Kasaragod</option>
+          <option value="Wayanad" {% if val[6]=="Wayanad" %}selected {% endif %}>Wayanad</option>
+          <option value="Kozhikode" {% if val[6]=="Kozhikode" %}selected {% endif %}>Kozhikode</option>
+          <option value="Malappuram" {% if val[6]=="Malappuram" %}selected {% endif %}>Malappuram</option>
+          <option value="Palakkad" {% if val[6]=="Palakkad" %}selected {% endif %}>Palakkad</option>
+          <option value="Thrissur" {% if val[6]=="Thrissur" %}selected {% endif %}>Thrissur</option>
+          <option value="Ernakulam" {% if val[6]=="Ernakulam" %}selected {% endif %}>Ernakulam</option>
+          <option value="Idukki" {% if val[6]=="Idukki" %}selected {% endif %}>Idukki</option>
+          <option value="Kottayam" {% if val[6]=="Kottayam" %}selected {% endif %}>Kottayam</option>
+          <option value="Alappuzha" {% if val[6]=="Alappuzha" %}selected {% endif %}>Alappuzha</option>
+          <option value="Pathanamthitta" {% if val[6]=="Pathanamthitta" %}selected {% endif %}>Pathanamthitta</option>
+          <option value="Kollam" {% if val[6]=="Kollam" %}selected {% endif %}>Kollam</option>
+          <option value="Thiruvananthapuram" {% if val[6]=="Thiruvananthapuram" %}selected {% endif %}>Thiruvananthapuram</option>
         </select>
       </label></td>
     </tr>
     <tr>
       <td>Phone</td>
       <td><label>
-        <input type="text" name="textfield7" />
+        <input type="text" name="textfield7" value="{{val[7]}}"/>
       </label></td>
     </tr>
     <tr>
       <td>Email</td>
       <td><label>
-        <input type="text" name="textfield8" />
+        <input type="text" name="textfield8" value="{{val[8]}}"/>
       </label></td>
     </tr>
     <tr>
       <td>Panchayath</td>
       <td><label>
       <select name="select2">
-	   <option>...Select...</option>
-          <option>Azhiyur</option>
-          <option>Chorode</option>
-          <option>Eramala</option>
-          <option>Onchiyam</option>
-          <option>Chekkiad</option>
-          <option>Edacherry</option>
-          <option>Puramery</option>
-          <option>Thuneri</option>
-          <option>Valayam</option>
-          <option>Vanimel</option>
-          <option>Kunnummal</option>
-          <option>Nadapuram</option>
-          <option>Kayakkodi</option>
-          <option>Kavilumpara</option>
-          <option>Kuttaidy</option>
-          <option>Maruthomkara</option>
-          <option>Velom</option>
-          <option>Narippatta</option>
-          <option>Maniyur</option>
-          <option>Thikkodi</option>
-          <option>Meppayur</option>
-          <option>Cheruvannur</option>
-          <option>Perambra</option>
-          <option>Chakkittappara</option>
-          <option>Balusseri</option>
-          <option>Naduvannur</option>
-          <option>Atholi</option>
-          <option>Ulliyeri</option>
-          <option>Chemancherry</option>
-          <option>Kakkodi</option>
-          <option>Narikkuni</option>
+          <option>...Select...</option>
+          <option value="Azhiyur" {% if val[9]=="Azhiyur" %}selected {% endif %}>Azhiyur</option>
+          <option value="Chorode" {% if val[9]=="Chorode" %}selected {% endif %}>Chorode</option>
+          <option value="Eramala" {% if val[9]=="Eramala" %}selected {% endif %}>Eramala</option>
+          <option value="Onchiyam" {% if val[9]=="Onchiyam" %}selected {% endif %}>Onchiyam</option>
+          <option value="Chekkiad" {% if val[9]=="Chekkiad" %}selected {% endif %}>Chekkiad</option>
+          <option value="Edacherry" {% if val[9]=="Edacherry" %}selected {% endif %}>Edacherry</option>
+          <option value="Puramery" {% if val[9]=="Puramery" %}selected {% endif %}>Puramery</option>
+          <option value="Thuneri" {% if val[9]=="Thuneri" %}selected {% endif %}>Thuneri</option>
+          <option value="Valayam" {% if val[9]=="Valayam" %}selected {% endif %}>Valayam</option>
+          <option value="Vanimel" {% if val[9]=="Vanimel" %}selected {% endif %}>Vanimel</option>
+          <option value="Kunnummal" {% if val[9]=="Kunnummal" %}selected {% endif %}>Kunnummal</option>
+          <option value="Nadapuram" {% if val[9]=="Nadapuram" %}selected {% endif %}>Nadapuram</option>
+          <option value="Kayakkodi" {% if val[9]=="Kayakkodi" %}selected {% endif %}>Kayakkodi</option>
+          <option value="Kavilumpara" {% if val[9]=="Kavilumpara" %}selected {% endif %}>Kavilumpara</option>
+          <option value="Kuttaidy" {% if val[9]=="Kuttaidy" %}selected {% endif %}>Kuttaidy</option>
+          <option value="Maruthomkara" {% if val[9]=="Maruthomkara" %}selected {% endif %}>Maruthomkara</option>
+          <option value="Velom" {% if val[9]=="Velom" %}selected {% endif %}>Velom</option>
+          <option value="Narippatta" {% if val[9]=="Narippatta" %}selected {% endif %}>Narippatta</option>
+          <option value=Maniyur" {% if val[9]=="Maniyur" %}selected {% endif %}>Maniyur</option>
+          <option value="Thikkodi" {% if val[9]=="Thikkodi" %}selected {% endif %}>Thikkodi</option>
+          <option value="Meppayur" {% if val[9]=="Meppayur" %}selected {% endif %}>Meppayur</option>
+          <option value="Cheruvannur" {% if val[9]=="Cheruvannur" %}selected {% endif %}>Cheruvannur</option>
+          <option value="Perambra" {% if val[9]=="Perambra" %}selected {% endif %}>Perambra</option>
+          <option value="Chakkittappara" {% if val[9]=="Chakkittappara" %}selected {% endif %}>Chakkittappara</option>
+          <option value="Balusseri" {% if val[9]=="Balusseri" %}selected {% endif %}>Balusseri</option>
+          <option value="Naduvannur" {% if val[9]=="Naduvannur" %}selected {% endif %}>Naduvannur</option>
+          <option value="Atholi" {% if val[9]=="Atholi" %}selected {% endif %}>Atholi</option>
+          <option value="Ulliyeri" {% if val[9]=="Ulliyeri" %}selected {% endif %}>Ulliyeri</option>
+          <option value="Chemancherry" {% if val[9]=="Chemancherry" %}selected {% endif %}>Chemancherry</option>
+          <option value="Kakkodi" {% if val[9]=="Kakkodi" %}selected {% endif %}>Kakkodi</option>
+          <option value="Narikkuni" {% if val[9]=="Narikkuni" %}selected {% endif %}>Narikkuni</option>
       </select>
       </label></td>
     </tr>
     <tr>
       <td>Landmark</td>
       <td><label>
-        <input type="text" name="textfield10" />
+        <input type="text" name="textfield10" value="{{val[10]}}" />
       </label></td>
     </tr>
     <tr>
       <td>Crop</td>
       <td><label>
-        <input type="text" name="textfield11" />
+        <input type="text" name="textfield11" value="{{val[11]}}" />
       </label></td>
     </tr>
     <tr>
       <td>Type</td>
       <td><label>
-        <input type="text" name="textfield12" />
+        <input type="text" name="textfield12" value="{{val[12]}}" />
       </label></td>
     </tr>
     <tr>
       <td>Owner/Rent</td>
       <td><label>
-        <input type="text" name="textfield13" />
+        <input type="text" name="textfield13" value="{{val[13]}}" />
       </label></td>
     </tr>
     <tr>
       <td>Document</td>
       <td><label>
-        <input type="text" name="textfield14" />
+        <input type="text" name="textfield14" value="{{val[14]}}"/>
       </label></td>
     </tr>
     <tr>
